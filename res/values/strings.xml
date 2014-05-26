@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AR UCSC</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_refresh">Refresh</string>
+	<string name="action_help">Help</string>
+	<string name="action_about">About this App</string>
+    <string name="title_activity_info_screen">Info Screen</string>
+    <string name="button_start">Start AR</string>
+    <string name="button_trip_selection">Trip Selection</string>
+    <string name="title_activity_trip_selection">Trip Selection</string>
+    <string name="text_nodata">No Data</string>
+    <string name="title_trip_list">trips</string>
+    <string name="title_trip_detail">trip Detail</string>
+    <string name="text_trip_detail_heading_pinterests">Points of interest on this trip:</string>
+    <string name="text_trip_detail_button_start">Start trip</string>
+    <string name="text_trip_detail_button_start_relative">Demo trip</string>
+
+    <string-array name="sorting_criteria_list">
+        <item name="sorting_criterion_default">Sort by default order</item>
+        <item name="sorting_criterion_alphabetical">Sort in alphabetical order</item>
+        <item name="sorting_criterion_proximity">Sort by proximity</item>
+    </string-array>
+
+    <string name="title_activity_map">MapActivity</string>
+    <string name="button_animate_route">A</string>
+    <string name="button_display_route">R</string>
+	<string name="help_text">The left panel shows the trips of Oxford that you can choose from.\n
+	    Use the dropdown menu on the top bar to change how the trips are sorted. This can be done in 3 ways:\n
+	    - by filename (default)\n
+	    - alphabetically\n
+	    - by proximity to the start of the trip (needs a GPS signal)\n
+	    Touch a trip to see its details in the right panel.\n
+	    If you cannot see the complete list of locations on the trip, touch the list and scroll.\n
+	    When you decide which trip you want, click the blue Start trip button!
+	</string>
+    <string name="help_ar_text">You are now in a trip. Hold up your device as you go about the city of Oxford, and follow the directions to the next point of interest.\n
+        POINTS OF INTEREST:\n
+        The name and distance of the next location are on the bottom of the screen. Use the Previous or Next buttons to skip points.\n
+        When you reach the next point of interest, the app will display information about it in a box, including recent tweets.\n
+        A green marker may be visible on your screen when you reach the point.\n
+        Tap the marker once to view tweets, and twice to load the next POI.
+	    To return to the trip selection screen, press your device\'s Back button.\n 
+	    MAP:\n
+        Click Show Map to display a map of the trip (needs internet). You can then display and animate the route to the next point.\n
+        Blue markers are visited points, green is the next point on the trip, purple are later points on the trip.\n
+        R will display the route to the next POI (if possible), and A will animate this.\n
+        To return to the camera view from the map, press your device\'s Back button.
+	    </string>
+	<string name="help_title">Help</string>
+	<string name="about_text">
+	    This app, Augmented Oxford, was developed in 2014 by\n
+	    Aditya Sharad, Benjamin Dawes, Kristian Kostadinov, \n
+	    Piotr Nosalik, Roland Batovski and Tristan Beardmore-Gray,\n
+	    as a Group Design Practical at the University of Oxford,\n
+	    supervised by Dr. Jason Nurse and Dr. Jassim Happa.\n
+	    Augmented reality behaviour implemented using the\n
+	    DroidAR framework (www.github.com/bitstars/droidar).\n
+	    Maps behaviour implemented using Google Maps API.\n
+	    Twitter feed implemented using Twitter4j.\n
+	    Other sources listed in the project report.
+	</string>
+	<string name="about_title">About Augmented Oxford</string>
+</resources>

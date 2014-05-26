@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ucsc.ar"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+    
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/> 
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
+    <permission 
+        android:name="ucsc.ar.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="ucsc.ar.permission.MAPS_RECEIVE"/>
+
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:glEsVersion="0x00020000"
+        android:required = "true" />   
+
+    <!--
+         This should be added to to allow the fullscreen mode to big screen 
+		devices like the samsung galaxy tab
+    -->
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data android:name="com.google.android.gms.version"
+           android:value="@integer/google_play_services_version" />
+        <meta-data
+   	 		android:name="com.google.android.maps.v2.API_KEY"
+    		android:value="AIzaSyB9-9bMaRDPUIv23TJQ6M7rOFz-Gj7MztA"/>
+        <uses-library android:name="com.google.android.maps" />
+        <!-- 
+        <activity
+            android:name="ucsc.ar.MainActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="landscape">
+        </activity>
+		 -->
+		 
+        <!--
+             IMPORTANT: The following activities have to be added to each project 
+			which imports the DroidAR Library (added from DroidAR code)
+        -->
+  
+        <activity
+            android:name="system.ArActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
+        </activity>
+
+        <!-- Custom List is used to easily display lists of any type of object -->
+        <activity android:name="gui.CustomListActivity" >
+        </activity>
+
+        <!-- the error handler will be automatically displayed when an error appears -->
+        <activity
+            android:name="system.ErrorHandler"
+            android:process=":myexeptionprocess"
+            android:taskAffinity="system.ErrorHandler" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <data android:mimeType="errors/myUnhandleCatcher" />
+            </intent-filter>
+        </activity>
+
+        <!-- is needed to display information on application startup -->
+        <activity
+            android:name="gui.InfoScreen"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+
+        <!-- an activity to easily display any kind of ui (from DroidAR code)-->
+        <activity
+            android:name="gui.simpleUI.SimpleUIv1"
+            android:theme="@android:style/Theme.Translucent" >
+        </activity>
+        <activity
+            android:name="ucsc.ar.InfoScreen"
+            android:label="@string/title_activity_info_screen" >
+        </activity>
+        
+        <!--  main Trip selection activity -->
+        <activity
+            android:name="ucsc.ar.TripListActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="unspecified" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- 
+            android:parentActivityName="ucsc.ar.MainActivity" >
+            android:label="@string/title_Trip_list"
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ucsc.ar.MainActivity" />
+             -->
+        </activity>
+        <activity
+            android:name="ucsc.ar.TripDetailActivity"
+            android:label="@string/title_trip_detail"
+            android:screenOrientation="unspecified"
+            android:parentActivityName="ucsc.ar.TripListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ucsc.ar.TripListActivity" />
+        </activity>
+         <activity
+            android:name="ucsc.ar.MapActivity"
+            android:label="@string/title_activity_map" >
+        </activity>
+    </application>
+</manifest>
