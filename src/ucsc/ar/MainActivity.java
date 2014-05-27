@@ -38,7 +38,7 @@ public class MainActivity extends ActionBarActivity {
 		// custom.mapView = (MapView)
 		// getSupportFragmentManager().findFragmentByTag("FragmentContainingMap").getView().findViewById(R.id.map);
 		// ((ViewGroup) custom.mapView.getParent()).removeView(custom.mapView);
-		custom.setTrip(R.raw.trip_oxford_colleges);
+		custom.setTrip(R.raw.trip_stem_colleges);
 		ArActivity.startWithSetup(MainActivity.this, custom);
 	}
 

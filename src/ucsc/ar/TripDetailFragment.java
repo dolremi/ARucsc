@@ -76,7 +76,7 @@ public class TripDetailFragment extends Fragment {
 					.setText(mItem.getInfo());
 			((TextView) rootView
 					.findViewById(R.id.trip_detail_heading_pinterests))
-					.setText("Pinterestnts of interest on this Trip ("
+					.setText("Below are the places you may be interested in on this trip ("
 							+ mItem.getSize() + " total):");
 			((TextView) rootView.findViewById(R.id.trip_detail_pinterests))
 					.setText(listToText(mItem.getAllPinterests()));

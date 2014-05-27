@@ -6,9 +6,8 @@ import ucsc.ar.structure.Trip;
 
 /**
  * 
- * @author Piotr Nosalik
  * 
- *         A generalized interface for pulling Trips from various sources
+ * A generalized interface for pulling Trips from various sources
  * 
  */
 public interface TripSource {

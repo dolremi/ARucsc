@@ -35,7 +35,7 @@ public class LocalFileSource implements TripSource {
 		if (this.external) {
 			/** Get the device's main external storage */
 			this.source = new File(Environment.getExternalStorageDirectory(),
-					"aug-ox/Trips");
+					"ARucsc/Trips");
 			/** If the directory doesn't exist, create it */
 			if (!this.source.exists()) {
 				this.source.mkdirs();
