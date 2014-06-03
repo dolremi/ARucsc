@@ -1,0 +1,32 @@
+<data>
+	<meta>
+		<id>LOOP</id>
+		<name>Tours of Social and Art Colleges</name>
+		<info>art Colleges of UC at Santa Cruz</info>
+		<size>2</size>
+	</meta>
+	
+	<trip>
+        <pinterest>
+            <name>McHenry library</name>
+            <latitude>36.9956663</latitude>
+            <longitude>-122.0587454</longitude>
+            <info> The central library.</info>
+            <hashtags>"McHenry library"</hashtags>
+        </pinterest>
+		<pinterest>
+            <name>Dept of Digital Art and New Media</name>
+            <latitude>36.9945095</latitude>
+            <longitude>-122.0609233</longitude>
+            <info> The department of digital arts and new media</info>
+            <hashtags>"Dept of Art"</hashtags>
+        </pinterest>
+        <pinterest>
+            <name>Dept of Music</name>
+            <latitude>36.9957440</latitude>
+            <longitude>-122.0598630</longitude>
+            <info> The department of music with recital hall nearby</info>
+            <hashtags>"Dept of Art"</hashtags>
+        </pinterest>
+        </trip>
+</data>

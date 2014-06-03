@@ -71,11 +71,6 @@ public class RelativePositionSetup extends Setup {
 
 	public Context context;
 
-	// public MapView mapView;
-	// public RelativePositionSetup(Context mainActivity){
-	// this.context = mainActivity;
-	// }
-
 	public RelativePositionSetup() {
 
 	}

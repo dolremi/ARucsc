@@ -1,8 +1,8 @@
 <data>
 	<meta>
-		<id>OXCLG</id>
-		<name>Tours of Science and Engineering Colleges</name>
-		<info>STEM Colleges of University of California at Santa Cruz</info>
+		<id>LOOP</id>
+		<name>Tours of STEM Colleges</name>
+		<info>STEM Colleges of UC at Santa Cruz</info>
 		<size>10</size>
 	</meta>
 	
@@ -11,70 +11,70 @@
             <name>Jack Baskin School of Engineering</name>
             <latitude>37.0002724</latitude>
             <longitude>-122.0630708</longitude>
-            <info>Founded in 1509, this college is home to one of the world's oldest boat clubs, which beat Jesus College Boat Club in the first modern rowing race in 1815.</info>
+            <info>It was a building with a post office on the first floor, the mathematics department on the second floor, classrooms on the third, a financial aid office on the fourth, and (occasionally) telescopes on the roof.  </info>
             <hashtags>"Jack Baskin School of Engineering"</hashtags>
         </pinterest>
 		<pinterest>
             <name>Engineering 2</name>
             <latitude>37.008550</latitude>
             <longitude>-122.062953</longitude>
-            <info>Founded in 1438, with the full name of The Warden and the College of the Souls of All Faithful People Deceased in the University of Oxford, all students here are actually Fellows of the college.</info>
+            <info>an award-winning building constructed in 2003. </info>
             <hashtags>"Engineering 2"</hashtags>
         </pinterest>
 		<pinterest>
             <name>Science and Engineering Library</name>
             <latitude>36.9991242</latitude>
             <longitude>-122.0607426</longitude>
-            <info>Founded in 1282, this college was originally known as Hart Hall, becoming Magdalen Hall in 1448, and finally Hertford College in 1740. It is known for its iconic bridge, the Bridge of Sighs.</info>
+            <info>home to the campus' collection of science publications and texts. </info>
             <hashtags>"Science and Engineering Library"</hashtags>
         </pinterest>
 		<pinterest>
             <name>BioMed</name>
             <latitude>36.9997411</latitude>
             <longitude>-122.0611396</longitude>
-            <info>Founded in 1786, the college started life as the Manchester Academy in 1786, located in Manchester. It then moved to York, back to Manchester, and then London, before opening in Oxford in 1893.</info>
+            <info>UCSC's Division of Physical and Biological Sciences (PBSci) and the Jack Baskin School of Engineering (SOE) support a broad range of biomedical research.</info>
             <hashtags>"BioMed"</hashtags>
         </pinterest>
 		<pinterest>
             <name>Sinsheimer Labs</name>
             <latitude>36.9989957</latitude>
             <longitude>-122.0616224</longitude>
-            <info>Founded in 1838, this college was originally Spring Hill College, in Birmingham, and became Mansfield College when it moved to Oxford in 1886.</info>
+            <info> a fearsome building with foreboding signs..</info>
             <hashtags>"Sinsheimer Labs"</hashtags>
         </pinterest>
 		<pinterest>
             <name>Thinmann Labs</name>
             <latitude>36.9981217</latitude>
             <longitude>-122.0619228</longitude>
-            <info>Founded in 1962, this college was the first college in Oxford to accept both men and women on an equal basis.</info>
+            <info>The nature science labs</info>
             <hashtags>"Thinmann Labs"</hashtags>
         </pinterest>
 		<pinterest>
             <name>Thinmann Lectures</name>
             <latitude>36.9979846</latitude>
             <longitude>-122.0613005</longitude>
-            <info>Founded in 1962, this college was founded by historian Alan Bullock, who later became Vice-Chancellor of Oxford University as a whole.</info>
+            <info>the largest lecture room on Science Hill.</info>
             <hashtags>"Thinmann Lectures"</hashtags>
         </pinterest>
 		<pinterest>
             <name>Center for Adaptive Optics</name>
             <latitude>36.9981731</latitude>
             <longitude>-122.0604851</longitude>
-            <info>Founded in 1379, this college gets its name because its official name, College of St Mary, was originally shared by Oriel College, hence it was referred to as the "New College of St Mary".</info>
+            <info> a building dedicated to the pursuit of more accurate imaging through ground-based telescopes.</info>
             <hashtags>"Center for Adaptive Optics"</hashtags>
         </pinterest>
 		<pinterest>
             <name>Institute of Marine Sciences</name>
             <latitude>36.9979246</latitude>
             <longitude>-122.0595732</longitude>
-            <info>Founded in 1458, this college is home to the famous Magdalen Tower, from which the college choir sings on May the 1st at 6am every year.</info>
+            <info>a building with confusing stairwells.</info>
             <hashtags>"Institute of Marine Sciences"</hashtags>
         </pinterest>
 		<pinterest>
             <name>Division of Physical and Biological Sciences</name>
             <latitude>36.9984901</latitude>
             <longitude>-122.0610538</longitude>
-            <info>Founded in 1893, this college was women-only until 2008.</info>
+            <info>Home to physical and biological majors.</info>
             <hashtags>"Division of Physical and Biological Sciences"</hashtags>
         </pinterest>
     </trip>

@@ -1,0 +1,139 @@
+<data>
+	<meta>
+		<id>LOOP</id>
+		<name>Tours of UCSC Bus Loop</name>
+		<info>Loop of University of California at Santa Cruz</info>
+		<size>16</size>
+	</meta>
+	
+	<trip>
+        <pinterest>
+            <name>Empire Grade and Tosca Terrace</name>
+            <latitude>36.9798694</latitude>
+            <longitude>-122.0593125</longitude>
+            <info>Empire Grade and Tosca Terrace Bus Stop</info>
+            <hashtags>"Empire Grade and Tosca Terrace"</hashtags>
+        </pinterest>
+        
+		<pinterest>
+            <name>High and Western Dr</name>
+            <latitude>36.9787552</latitude>
+            <longitude>-122.0578641</longitude>
+            <info>High and Western Dr Bus Stop.</info>
+            <hashtags>"High and Western Dr"</hashtags>
+        </pinterest>
+        
+		<pinterest>
+            <name>Main Entrance</name>
+            <latitude>36.9777010</latitude>
+            <longitude>-122.0536476</longitude>
+            <info>Main Entrance Bus Stop</info>
+            <hashtags>"Main Entrance"</hashtags>
+        </pinterest>
+        
+		<pinterest>
+            <name>Coolidge and Hagar</name>
+            <latitude>36.9816350</latitude>
+            <longitude>-122.0516950</longitude>
+            <info>Coolidge and Hagar Bus Stop.</info>
+            <hashtags>"Coolidge and Hagar"</hashtags>
+        </pinterest>
+        
+		<pinterest>
+            <name>Hagar and Lower Quarry Rd</name>
+            <latitude>36.9858344</latitude>
+            <longitude>-122.0536047</longitude>
+            <info>Hagar and Lower Quarry Rd Bus Stop.</info>
+            <hashtags>"Hagar and Lower Quarry Rd"</hashtags>
+        </pinterest>
+        
+		<pinterest>
+            <name>East Remote</name>
+            <latitude>36.9912933</latitude>
+            <longitude>-122.0546347</longitude>
+            <info>East Remote Bus Stop.</info>
+            <hashtags>"East Remote"</hashtags>
+        </pinterest>
+        
+		<pinterest>
+            <name>East Field House</name>
+            <latitude>36.9942326</latitude>
+            <longitude>-122.0554823</longitude>
+            <info>East Field House Bus Stop.</info>
+            <hashtags>"East Field House"</hashtags>
+        </pinterest>
+        
+		<pinterest>
+            <name>Bookstore Stevenson College</name>
+            <latitude>36.9974630</latitude>
+            <longitude>-122.05514971</longitude>
+            <info>Bookstore Stevenson College Bus Stop.</info>
+            <hashtags>"Bookstore Stevenson College"</hashtags>
+        </pinterest>
+        
+		<pinterest>
+            <name>McLaughlin and Crown College</name>
+            <latitude>36.9989111</latitude>
+            <longitude>-122.0551926</longitude>
+            <info>McLaughlin and Crown College Bus Stop.</info>
+            <hashtags>"McLaughlin and Crown College"</hashtags>
+        </pinterest>
+        
+		<pinterest>
+            <name>College 9 and 10   Health Center</name>
+            <latitude>36.9998108</latitude>
+            <longitude>-122.0584220</longitude>
+            <info>College 9 and 10 Health Center Bus Stop.</info>
+            <hashtags>"College 9 and 10 Health Center"</hashtags>
+        </pinterest>
+        
+		<pinterest>
+            <name>Science Hill</name>
+            <latitude>36.9998537</latitude>
+            <longitude>-122.0622414</longitude>
+            <info>Science Hill Bus Stop.</info>
+            <hashtags>"Science Hill"</hashtags>
+        </pinterest>
+        
+		<pinterest>
+            <name>Kresge College</name>
+            <latitude>36.9992025</latitude>
+            <longitude>-122.0644623</longitude>
+            <info>Kresge College Bus Stop.</info>
+            <hashtags>"Kresge College"</hashtags>
+        </pinterest>
+        
+		<pinterest>
+            <name>College 8 Porter</name>
+            <latitude>36.9928615</latitude>
+            <longitude>-122.0651919</longitude>
+            <info>College 8 Porter Bus Stop.</info>
+            <hashtags>"College 8 Porter"</hashtags>
+        </pinterest>
+        
+		<pinterest>
+            <name>Family Student Housing</name>
+            <latitude>36.9917560</latitude>
+            <longitude>-122.0666939</longitude>
+            <info>Family Student Housing Bus Stop.</info>
+            <hashtags>"Family Student Housing"</hashtags>
+        </pinterest>
+        
+		<pinterest>
+            <name>Oakes College</name>
+            <latitude>36.9898622</latitude>
+            <longitude>-122.0671231</longitude>
+            <info>Oakes College Bus Stop.</info>
+            <hashtags>"Oakes College"</hashtags>
+        </pinterest>
+        
+		<pinterest>
+            <name>Empire Grade and Arboretum</name>
+            <latitude>36.9836661</latitude>
+            <longitude>-122.0649022</longitude>
+            <info>Empire Grade and Arboretum Bus Stop.</info>
+            <hashtags>"Empire Grade and Arboretum"</hashtags>
+        </pinterest>
+        
+    </trip>
+</data>

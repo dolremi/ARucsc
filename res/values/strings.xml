@@ -51,16 +51,12 @@
 	    </string>
 	<string name="help_title">Help</string>
 	<string name="about_text">
-	    This app, Augmented Oxford, was developed in 2014 by\n
-	    Aditya Sharad, Benjamin Dawes, Kristian Kostadinov, \n
-	    Piotr Nosalik, Roland Batovski and Tristan Beardmore-Gray,\n
-	    as a Group Design Practical at the University of Oxford,\n
-	    supervised by Dr. Jason Nurse and Dr. Jassim Happa.\n
+	    This app was developed by Ni Di and Jia Xu\n
 	    Augmented reality behaviour implemented using the\n
 	    DroidAR framework (www.github.com/bitstars/droidar).\n
 	    Maps behaviour implemented using Google Maps API.\n
 	    Twitter feed implemented using Twitter4j.\n
 	    Other sources listed in the project report.
 	</string>
-	<string name="about_title">About Augmented Oxford</string>
+	<string name="about_title">About UCSC Augmented Reality</string>
 </resources>

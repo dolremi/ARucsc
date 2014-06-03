@@ -39,15 +39,14 @@ import commands.Command;
 import commands.ui.CommandShowToast;
 
 public class CustomARSetup extends Setup {
-	public int activeTripID; // set by caller module
+	public int activeTripID;
 	private Trip theActiveTrip;
 	private Pinterest theCurrentPinterest;
 
 	private boolean minAccuracyReached; // Whether the GPS location is accurate,
-										// initially false
 	private String nextPlace; // Name of the next location
 	private Location nextLocation; // Pinterest of the next location
-	private int distanceAway; // Distance to the next Pinterest in metres
+	private int distanceAway; // Distance to the next Pinterest in meter
 	private GLCamera camera;
 	private World world;
 	private GLFactory objectFactory;
@@ -55,19 +54,13 @@ public class CustomARSetup extends Setup {
 	private Action rotateGLCameraAction;
 	private GuiSetup guiSetup;
 	private TextView distanceInfo;
-	private Stack<GeoObj> markers; // A stack of the markers corresponding to
-									// the displayed Pinterests
-	private Stack<Pinterest> markedPinterests; // A Stack of the displayed
+	private Stack<GeoObj> markers; // A stack of the markers for Pinterest
+	private Stack<Pinterest> markedPinterests; // A Stack of the marked
 												// Pinterests
 
 	private static final String LOG_TAG = "CustomARSetup";
 
 	public Context context;
-
-	// public MapView mapView;
-	// public CustomARSetup(Context mainActivity){
-	// this.context = mainActivity;
-	// }
 
 	public CustomARSetup() {
 
@@ -98,8 +91,6 @@ public class CustomARSetup extends Setup {
 
 		Trip Trip = theActiveTrip;
 
-		// Trip Trip = new
-		// Trip(context.getResources().openRawResource(activeTripID));
 		List<Pinterest> PinterestsTest = Trip.getAllPinterests();
 		System.out.println("TripData");
 		System.out.println("ID: " + Trip.getID());
@@ -119,7 +110,7 @@ public class CustomARSetup extends Setup {
 						+ PinterestsTest.get(i).getDataSource()
 								.getSearchString());
 		}
-		// theActiveTrip = Trip;
+
 		distanceInfo.setText("Trip loaded: " + Trip.getName());
 
 	}
@@ -166,7 +157,6 @@ public class CustomARSetup extends Setup {
 			world.add(o); // Add the next marker to the world
 			markers.push(o); // Push it to the stack of markers
 			markedPinterests.push(p); // Push the Pinterest to the stack of
-										// displayed Pinterests
 		}
 
 	}
@@ -188,7 +178,6 @@ public class CustomARSetup extends Setup {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				// TODO Auto-generated method stub
 			}
 		});
 		AlertDialog dialog = builder.create();
@@ -249,12 +238,7 @@ public class CustomARSetup extends Setup {
 
 	// Display the name of a location and the defined information about it
 	private void displayInfo(String name, String info) {
-		/**
-		 * InfoScreenSettings i = new InfoScreenSettings(getActivity());
-		 * i.addText(name); i.addText(info);
-		 * ActivityConnector.getInstance().startActivity(getActivity(),
-		 * InfoScreen.class, i);
-		 **/
+
 		// Using DataSourceDisplay since InfoScreen doesn't display as intended
 		displayDataSourceInfo(name, info);
 	}

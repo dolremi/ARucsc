@@ -83,23 +83,7 @@ public class TripCreator {
 					inMeta = true;
 					break;
 				case "id":
-					if (inMeta) {
-						TripData.id = parser.nextText();
-						/*
-						 * String idData = parser.nextText(); try { TripData.id
-						 * = Integer.parseInt(idData); } catch
-						 * (NumberFormatException e){ throw new
-						 * XmlPullParserException("Invalid String in id field");
-						 * }
-						 */
-					}
-					/*
-					 * else { //Currently in a Pinterest String data =
-					 * parser.nextText(); try { currentPinterestData.id =
-					 * Integer.parseInt(data); } catch (NumberFormatException
-					 * e){ throw new
-					 * XmlPullParserException("Invalid String in id field"); } }
-					 */
+					TripData.id = parser.nextText();
 					break;
 				case "name":
 					if (inMeta) {
@@ -145,12 +129,7 @@ public class TripCreator {
 					}
 					break;
 				case "hashtags":
-					/*
-					 * if (inMeta){ TripData.hashtags = parser.nextText(); }
-					 * else {
-					 */
 					currentPinterestData.hashtags = parser.nextText();
-					// }
 					break;
 				case "trip":
 					inMeta = false;
@@ -171,7 +150,6 @@ public class TripCreator {
 						TripData.Pinterests.add(newPinterest);
 					break;
 				case "trip":
-
 					break;
 				case "meta":
 					inMeta = false;
@@ -345,23 +323,7 @@ public class TripCreator {
 					inMeta = true;
 					break;
 				case "id":
-					if (inMeta) {
-						TripData.id = parser.nextText();
-						/*
-						 * String idData = parser.nextText(); try { TripData.id
-						 * = Integer.parseInt(idData); } catch
-						 * (NumberFormatException e){ throw new
-						 * XmlPullParserException("Invalid String in id field");
-						 * }
-						 */
-					}
-					/*
-					 * else { //Currently in a Pinterest String data =
-					 * parser.nextText(); try { currentPinterestData.id =
-					 * Integer.parseInt(data); } catch (NumberFormatException
-					 * e){ throw new
-					 * XmlPullParserException("Invalid String in id field"); } }
-					 */
+					TripData.id = parser.nextText();
 					break;
 				case "name":
 					if (inMeta) {
@@ -407,12 +369,7 @@ public class TripCreator {
 					}
 					break;
 				case "hashtags":
-					/*
-					 * if (inMeta){ TripData.hashtags = parser.nextText(); }
-					 * else {
-					 */
 					currentPinterestData.hashtags = parser.nextText();
-					// }
 					break;
 				case "trip":
 					inMeta = false;
