@@ -27,16 +27,16 @@
     <string name="title_activity_map">MapActivity</string>
     <string name="button_animate_route">A</string>
     <string name="button_display_route">R</string>
-	<string name="help_text">The left panel shows the trips of Oxford that you can choose from.\n
+	<string name="help_text">The left panel shows the trips of UCSC that you can choose from.\n
 	    Use the dropdown menu on the top bar to change how the trips are sorted. This can be done in 3 ways:\n
 	    - by filename (default)\n
 	    - alphabetically\n
 	    - by proximity to the start of the trip (needs a GPS signal)\n
-	    Touch a trip to see its details in the right panel.\n
+	    Touch a trip to see how many plcaces you will see in the right panel.\n
 	    If you cannot see the complete list of locations on the trip, touch the list and scroll.\n
 	    When you decide which trip you want, click the blue Start trip button!
 	</string>
-    <string name="help_ar_text">You are now in a trip. Hold up your device as you go about the city of Oxford, and follow the directions to the next point of interest.\n
+    <string name="help_ar_text">You are now beginning the wonderful journey in UCSC campus and follow the instructions.\n
         POINTS OF INTEREST:\n
         The name and distance of the next location are on the bottom of the screen. Use the Previous or Next buttons to skip points.\n
         When you reach the next point of interest, the app will display information about it in a box, including recent tweets.\n

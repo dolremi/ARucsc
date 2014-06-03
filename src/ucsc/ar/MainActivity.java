@@ -42,16 +42,16 @@ public class MainActivity extends ActionBarActivity {
 		ArActivity.startWithSetup(MainActivity.this, custom);
 	}
 
-	public void startAR2(View view) {
-		CustomARSetup custom = new CustomARSetup();
-		custom.context = mainActivity;
-		// custom.mapView = (MapView)
-		// getSupportFragmentManager().findFragmentByTag("FragmentContainingMap").getView().findViewById(R.id.map);
-		// ((ViewGroup) custom.mapView.getParent()).removeView(custom.mapView);
+	// public void startAR2(View view) {
+	// CustomARSetup custom = new CustomARSetup();
+	// custom.context = mainActivity;
+	// custom.mapView = (MapView)
+	// getSupportFragmentManager().findFragmentByTag("FragmentContainingMap").getView().findViewById(R.id.map);
+	// ((ViewGroup) custom.mapView.getParent()).removeView(custom.mapView);
 
-		// custom.setTrip(R.raw.trip_science);
-		// ArActivity.startWithSetup(MainActivity.this, custom);
-	}
+	// custom.setTrip(R.raw.trip_science);
+	// ArActivity.startWithSetup(MainActivity.this, custom);
+	// }
 
 	// method called by Trip Selection button, loading Trip selection screen.
 	public void TripSelection(View view) {
