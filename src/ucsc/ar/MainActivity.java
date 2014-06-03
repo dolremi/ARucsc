@@ -23,8 +23,6 @@ public class MainActivity extends ActionBarActivity {
 
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
-			// .add(R.id.container, new PlaceholderFragment(),
-			// "FragmentContainingMap").commit();
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
 
@@ -35,9 +33,6 @@ public class MainActivity extends ActionBarActivity {
 	public void startAR(View view) {
 		CustomARSetup custom = new CustomARSetup();
 		custom.context = mainActivity;
-		// custom.mapView = (MapView)
-		// getSupportFragmentManager().findFragmentByTag("FragmentContainingMap").getView().findViewById(R.id.map);
-		// ((ViewGroup) custom.mapView.getParent()).removeView(custom.mapView);
 		custom.setTrip(R.raw.trip_stem_colleges);
 		ArActivity.startWithSetup(MainActivity.this, custom);
 	}
@@ -83,8 +78,6 @@ public class MainActivity extends ActionBarActivity {
 	 * A placeholder fragment containing a simple view.
 	 * */
 	public static class PlaceholderFragment extends Fragment {
-		// private GoogleMap mMap;
-		// private MapView mMapView;
 
 		public PlaceholderFragment() {
 
@@ -95,11 +88,6 @@ public class MainActivity extends ActionBarActivity {
 				Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_main, container,
 					false);
-
-			// mMapView = (MapView) rootView.findViewById(R.id.map);
-			// mMapView.onCreate(savedInstanceState);
-
-			/* setUpMapIfNeeded(); */
 
 			return rootView;
 		}

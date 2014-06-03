@@ -123,7 +123,7 @@ public class CustomARSetup extends Setup {
 			updateDistanceInfo();
 
 			final GeoObj o = new GeoObj(p.getLatitude(), p.getLongitude());
-			o.setComp(objectFactory.newDiamond(Color.green())); // Green
+			o.setComp(objectFactory.newCircle(Color.green())); // Green
 																// represents
 																// unvisited
 
@@ -148,7 +148,7 @@ public class CustomARSetup extends Setup {
 					if (theCurrentPinterest == p) { // If current Pinterest add
 													// the next
 						addNextPinterest();
-						o.setColor(Color.blue()); // Blue represents visited
+						o.setColor(Color.red()); // Blue represents visited
 					}
 					return true;
 				}
