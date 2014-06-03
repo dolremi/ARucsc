@@ -52,7 +52,6 @@ public class TripListActivity extends FragmentActivity implements
 					R.id.trip_list)).setActivateOnItemClick(true);
 		}
 
-		// TODO: If exposing deep links into your app, handle intents here.
 	}
 
 	/*
