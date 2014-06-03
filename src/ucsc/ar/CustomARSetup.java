@@ -43,9 +43,10 @@ public class CustomARSetup extends Setup {
 	private Trip theActiveTrip;
 	private Pinterest theCurrentPinterest;
 
-	private boolean minAccuracyReached; // Whether the GPS location is accurate,
+	private boolean minAccuracyReached; // Check if the GPS has reached the min
+										// accuracy
 	private String nextPlace; // Name of the next location
-	private Location nextLocation; // Pinterest of the next location
+	private Location nextLocation; // Location of the next Pinterest
 	private int distanceAway; // Distance to the next Pinterest in meter
 	private GLCamera camera;
 	private World world;
@@ -55,8 +56,7 @@ public class CustomARSetup extends Setup {
 	private GuiSetup guiSetup;
 	private TextView distanceInfo;
 	private Stack<GeoObj> markers; // A stack of the markers for Pinterest
-	private Stack<Pinterest> markedPinterests; // A Stack of the marked
-												// Pinterests
+	private Stack<Pinterest> markedPinterests; // A stack of the marked ones
 
 	private static final String LOG_TAG = "CustomARSetup";
 
@@ -92,7 +92,7 @@ public class CustomARSetup extends Setup {
 		Trip Trip = theActiveTrip;
 
 		List<Pinterest> PinterestsTest = Trip.getAllPinterests();
-		System.out.println("TripData");
+		System.out.println("Trip info");
 		System.out.println("ID: " + Trip.getID());
 		System.out.println("Name: " + Trip.getName());
 		System.out.println("Info: " + Trip.getInfo());
@@ -248,7 +248,6 @@ public class CustomARSetup extends Setup {
 			GLFactory objectFactory, GeoObj currentPosition) {
 		this.objectFactory = objectFactory;
 		glRenderer.addRenderElement(world);
-		// addNextPinterest();
 	}
 
 	@Override
@@ -263,8 +262,7 @@ public class CustomARSetup extends Setup {
 		minAccuracyAction = new ActionWaitForAccuracy(getActivity(), 24.0f, 10) {
 			@Override
 			public void minAccuracyReachedFirstTime(Location l,
-					ActionWaitForAccuracy a) { // Add the first Pinterest once
-												// there is good signal
+					ActionWaitForAccuracy a) {
 				minAccuracyReached = true;
 				addNextPinterest();
 				if (!eventManager.getOnLocationChangedAction().remove(a)) {
@@ -281,9 +279,11 @@ public class CustomARSetup extends Setup {
 				if (minAccuracyReached) {
 					Location l = camera.getGPSLocation();
 					distanceAway = (int) l.distanceTo(nextLocation);
-					if (distanceAway < 5) {
-						// Add the next Pinterest if within 5m of the current
-						markers.peek().setColor(Color.blue());
+					if (distanceAway < 10) {
+
+						// if distance within 10 meter, color changes and add
+						// next location
+						markers.peek().setColor(Color.red());
 						displayInfo(theCurrentPinterest.getName(),
 								theCurrentPinterest.getInfo());
 						addNextPinterest();
@@ -292,7 +292,7 @@ public class CustomARSetup extends Setup {
 					distanceInfo.setText("Next location: " + nextPlace
 							+ ", Distance: " + distanceAway + "m");
 				}
-				return true; // So that it is never removed from the list
+				return true;
 			}
 
 		});
@@ -329,7 +329,7 @@ public class CustomARSetup extends Setup {
 					skipPinterest();
 				} else {
 					CommandShowToast.show(getActivity(),
-							"Waiting on GPS accuracy");
+							"Waiting for GPS to reach min accuracy");
 				}
 				return true;
 			}
@@ -345,7 +345,7 @@ public class CustomARSetup extends Setup {
 					previousPinterest();
 				} else {
 					CommandShowToast.show(getActivity(),
-							"Waiting on GPS accuracy");
+							"Waiting for GPS to reach min accuracy");
 				}
 				return true;
 
