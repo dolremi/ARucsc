@@ -127,10 +127,6 @@ public class TripDetailFragment extends Fragment {
 							RelativePositionSetup custom = new RelativePositionSetup(); // For
 																						// Pinterest
 																						// markers
-																						// which
-																						// don't
-																						// use
-																						// GPS
 																						// coordinates
 							// custom.context = currentActivity;
 							// edited to use getActivity(), avoiding NPEs when

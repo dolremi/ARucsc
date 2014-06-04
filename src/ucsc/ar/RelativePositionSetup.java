@@ -133,13 +133,10 @@ public class RelativePositionSetup extends Setup {
 			theCurrentPinterest = p;
 			updateDistanceInfo();
 
-			// final GeoObj o = new GeoObj(p.getLatitude(),p.getLongitude());
 			Random r = new Random();
 			final GeoObj o = new GeoObj();
 			o.setVirtualPosition(new Vec(r.nextInt(10), r.nextInt(10), 0));
 
-			// o.setComp(objectFactory.newDiamond(Color.green())); //Green
-			// represents unvisited
 			o.setComp(objectFactory.newPyramid(
 					new Vec(r.nextInt(10), r.nextInt(10), 0), 4, Color.green()));
 			o.setOnClickCommand(new Command() {
@@ -192,9 +189,7 @@ public class RelativePositionSetup extends Setup {
 		builder.setView(view);
 		builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
-			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				// TODO Auto-generated method stub
 			}
 		});
 		AlertDialog dialog = builder.create();
@@ -255,13 +250,7 @@ public class RelativePositionSetup extends Setup {
 
 	// Display the name of a location and the defined information about it
 	private void displayInfo(String name, String info) {
-		/**
-		 * InfoScreenSettings i = new InfoScreenSettings(getActivity());
-		 * i.addText(name); i.addText(info);
-		 * ActivityConnector.getInstance().startActivity(getActivity(),
-		 * InfoScreen.class, i);
-		 **/
-		// Using DataSourceDisplay since InfoScreen doesn't display as intended
+
 		displayDataSourceInfo(name, info);
 	}
 

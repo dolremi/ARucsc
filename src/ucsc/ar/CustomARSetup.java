@@ -123,9 +123,9 @@ public class CustomARSetup extends Setup {
 			updateDistanceInfo();
 
 			final GeoObj o = new GeoObj(p.getLatitude(), p.getLongitude());
-			o.setComp(objectFactory.newCircle(Color.green())); // Green
-																// represents
-																// unvisited
+
+			// Add new green circle for the current world
+			o.setComp(objectFactory.newCircle(Color.green()));
 
 			o.setOnClickCommand(new Command() {
 				@Override
@@ -145,10 +145,11 @@ public class CustomARSetup extends Setup {
 				@Override
 				public boolean execute() {
 					displayInfo(p.getName(), p.getInfo());
-					if (theCurrentPinterest == p) { // If current Pinterest add
-													// the next
+					if (theCurrentPinterest == p) { // If current is clicked add
+													// next one
+
 						addNextPinterest();
-						o.setColor(Color.red()); // Blue represents visited
+						o.setColor(Color.red()); // Red represents visited
 					}
 					return true;
 				}
