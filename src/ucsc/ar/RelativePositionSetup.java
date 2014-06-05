@@ -1,9 +1,6 @@
 package ucsc.ar;
 
-/**
- * A clone of the CustomARSetup displaying markers in the virtual world randomly around the user
- * instead of using the GPS coordinates of the given Pinterests. * 
- */
+// RelativePositionSetup will show the closest marker nearby the current position of user
 
 import geo.GeoObj;
 import gl.Color;
@@ -50,8 +47,7 @@ public class RelativePositionSetup extends Setup {
 	private Trip theActiveTrip;
 	private Pinterest theCurrentPinterest;
 
-	private boolean minAccuracyReached; // Whether the GPS location is accurate,
-										// initially false
+	private boolean minAccuracyReached;
 	private String nextPlace; // Name of the next location
 	private Location nextLocation; // Pinterest of the next location
 	private int distanceAway; // Distance to the next Pinterest in metres
@@ -100,10 +96,8 @@ public class RelativePositionSetup extends Setup {
 
 		Trip Trip = theActiveTrip;
 
-		// Trip Trip = new
-		// Trip(context.getResources().openRawResource(activeTripID));
 		List<Pinterest> PinterestsTest = Trip.getAllPinterests();
-		System.out.println("TripData");
+		System.out.println("Trip Info");
 		System.out.println("ID: " + Trip.getID());
 		System.out.println("Name: " + Trip.getName());
 		System.out.println("Info: " + Trip.getInfo());
@@ -121,7 +115,7 @@ public class RelativePositionSetup extends Setup {
 						+ PinterestsTest.get(i).getDataSource()
 								.getSearchString());
 		}
-		// theActiveTrip = Trip;
+
 		distanceInfo.setText("Trip loaded: " + Trip.getName());
 
 	}
@@ -157,19 +151,18 @@ public class RelativePositionSetup extends Setup {
 				@Override
 				public boolean execute() {
 					displayInfo(p.getName(), p.getInfo());
-					if (theCurrentPinterest == p) { // If current Pinterest add
-													// the next
+					if (theCurrentPinterest == p) {
+
 						addNextPinterest();
-						o.setColor(Color.blue()); // Blue represents visited
+						o.setColor(Color.red()); // Red represents visited
 					}
 					return true;
 				}
 			});
 
-			world.add(o); // Add the next marker to the world
-			markers.push(o); // Push it to the stack of markers
-			markedPinterests.push(p); // Push the Pinterest to the stack of
-										// displayed Pinterests
+			world.add(o);
+			markers.push(o);
+			markedPinterests.push(p);
 		}
 
 	}
@@ -197,7 +190,7 @@ public class RelativePositionSetup extends Setup {
 	}
 
 	private void skipPinterest() {
-		markers.peek().setColor(Color.blue());
+		markers.peek().setColor(Color.red());
 		displayInfo(theCurrentPinterest.getName(),
 				theCurrentPinterest.getInfo());
 		addNextPinterest();
@@ -271,18 +264,6 @@ public class RelativePositionSetup extends Setup {
 		eventManager.addOnLocationChangedAction(new ActionCalcRelativePos(
 				world, camera));
 
-		/*
-		 * minAccuracyAction = new ActionWaitForAccuracy(getActivity(), 24.0f,
-		 * 10) {
-		 * 
-		 * @Override public void minAccuracyReachedFirstTime(Location l,
-		 * ActionWaitForAccuracy a) { //Add the first Pinterest once there is
-		 * good signal minAccuracyReached = true; addNextPinterest(); if
-		 * (!eventManager.getOnLocationChangedAction().remove(a)) {
-		 * Log.e(LOG_TAG,
-		 * "Could not remove minAccuracyAction from the onLocationChangedAction list"
-		 * ); } } }; eventManager.addOnLocationChangedAction(minAccuracyAction);
-		 */
 		eventManager.addOnLocationChangedAction(new Action() {
 
 			@Override
@@ -290,8 +271,8 @@ public class RelativePositionSetup extends Setup {
 				if (minAccuracyReached) {
 					Location l = camera.getGPSLocation();
 					distanceAway = (int) l.distanceTo(nextLocation);
-					if (distanceAway < 5) {
-						// Add the next Pinterest if within 5m of the current
+					if (distanceAway < 20) {
+
 						markers.peek().setColor(Color.blue());
 						displayInfo(theCurrentPinterest.getName(),
 								theCurrentPinterest.getInfo());

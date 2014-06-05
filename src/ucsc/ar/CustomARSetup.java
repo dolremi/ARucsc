@@ -124,8 +124,8 @@ public class CustomARSetup extends Setup {
 
 			final GeoObj o = new GeoObj(p.getLatitude(), p.getLongitude());
 
-			// Add new green circle for the current world
-			o.setComp(objectFactory.newCircle(Color.green()));
+			// Add new green Diamond for the current world
+			o.setComp(objectFactory.newDiamond(Color.green()));
 
 			o.setOnClickCommand(new Command() {
 				@Override
@@ -157,7 +157,7 @@ public class CustomARSetup extends Setup {
 
 			world.add(o); // Add the next marker to the world
 			markers.push(o); // Push it to the stack of markers
-			markedPinterests.push(p); // Push the Pinterest to the stack of
+			markedPinterests.push(p); // Push the current one
 		}
 
 	}
@@ -186,7 +186,7 @@ public class CustomARSetup extends Setup {
 	}
 
 	private void skipPinterest() {
-		markers.peek().setColor(Color.blue());
+		markers.peek().setColor(Color.red());
 		displayInfo(theCurrentPinterest.getName(),
 				theCurrentPinterest.getInfo());
 		addNextPinterest();
@@ -280,9 +280,9 @@ public class CustomARSetup extends Setup {
 				if (minAccuracyReached) {
 					Location l = camera.getGPSLocation();
 					distanceAway = (int) l.distanceTo(nextLocation);
-					if (distanceAway < 10) {
+					if (distanceAway < 20) {
 
-						// if distance within 10 meter, color changes and add
+						// if distance within 20 meter, color changes and add
 						// next location
 						markers.peek().setColor(Color.red());
 						displayInfo(theCurrentPinterest.getName(),

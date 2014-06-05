@@ -77,7 +77,7 @@ public class LocalFileSource implements TripSource {
 
 	@Override
 	public Trip loadNext() {
-		/** Return null (throw an exception?) when no files to read */
+
 		if (loadedFiles.isEmpty())
 			return null;
 		File f = loadedFiles.get(0);

@@ -1,0 +1,81 @@
+<data>
+	<meta>
+		<id>TEST</id>
+		<name>Demo Tours</name>
+		<info>A tour with nearby markers</info>
+		<size>11</size>
+	</meta>
+	
+	<trip>
+	    <pinterest>
+            <name>Starting point</name>
+            <latitude>36.9960261</latitude>
+            <longitude>-122.0587390</longitude>
+            <info> The Starting point</info>
+            <hashtags>"The starting point"</hashtags>
+        </pinterest>
+	    <pinterest>
+            <name>First point</name>
+            <latitude>36.9961546</latitude>
+            <longitude>-122.0588999</longitude>
+            <info> The first spot</info>
+            <hashtags>The first spot</hashtags>
+        </pinterest>
+        <pinterest>
+            <name>Second point</name>
+            <latitude>36.9959832</latitude>
+            <longitude>-122.0590286</longitude>
+            <info> The second spot</info>
+            <hashtags>The second spot</hashtags>
+        </pinterest>
+		<pinterest>
+            <name>Third point</name>
+            <latitude>36.9956833</latitude>
+            <longitude>-122.0591574</longitude>
+            <info> The third spot</info>
+            <hashtags>"The third spot"</hashtags>
+        </pinterest>
+        <pinterest>
+            <name>Fourth point</name>
+            <latitude>36.9953748</latitude>
+            <longitude>-122.0592969</longitude>
+            <info> The fourth point</info>
+            <hashtags>"The fourth one"</hashtags>
+        </pinterest>
+        <pinterest>
+            <name>Fifth One</name>
+            <latitude>36.9952720</latitude>
+            <longitude>-122.0589965</longitude>
+            <info> The fifth one</info>
+            <hashtags>"The fifth one"</hashtags>
+        </pinterest>
+        <pinterest>
+            <name>Sixth One</name>
+            <latitude>36.9952549</latitude>
+            <longitude>-122.0585888</longitude>
+            <info> The sixth one</info>
+            <hashtags>"The sixth one"</hashtags>
+        </pinterest>
+        <pinterest>
+            <name>Seventh One</name>
+            <latitude>36.9952549</latitude>
+            <longitude>-122.0585888</longitude>
+            <info> The seventh one</info>
+            <hashtags>"The seventh one"</hashtags>
+        </pinterest>
+        <pinterest>
+            <name>eighth One</name>
+            <latitude>36.9955291</latitude>
+            <longitude>-122.0585029</longitude>
+            <info> The eighth one</info>
+            <hashtags>"The eighth one"</hashtags>
+        </pinterest>
+        <pinterest>
+            <name>nineth One</name>
+            <latitude>36.9958461</latitude>
+            <longitude>-122.0583205</longitude>
+            <info> The nineth one</info>
+            <hashtags>"The nineth one"</hashtags>
+        </pinterest>
+        </trip>
+</data>

@@ -1,6 +1,5 @@
 package ucsc.ar;
 
-import system.ArActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -30,21 +29,10 @@ public class MainActivity extends ActionBarActivity {
 
 	// method called by Start AR button, loading ArActivity with custom Setup
 	// and one of the Trips
-	public void startAR(View view) {
-		CustomARSetup custom = new CustomARSetup();
-		custom.context = mainActivity;
-		custom.setTrip(R.raw.trip_stem_colleges);
-		ArActivity.startWithSetup(MainActivity.this, custom);
-	}
-
-	// public void startAR2(View view) {
+	// public void startAR(View view) {
 	// CustomARSetup custom = new CustomARSetup();
 	// custom.context = mainActivity;
-	// custom.mapView = (MapView)
-	// getSupportFragmentManager().findFragmentByTag("FragmentContainingMap").getView().findViewById(R.id.map);
-	// ((ViewGroup) custom.mapView.getParent()).removeView(custom.mapView);
-
-	// custom.setTrip(R.raw.trip_science);
+	// custom.setTrip(R.raw.trip_stem_colleges);
 	// ArActivity.startWithSetup(MainActivity.this, custom);
 	// }
 
@@ -91,38 +79,6 @@ public class MainActivity extends ActionBarActivity {
 
 			return rootView;
 		}
-
-		/*
-		 * public void onResume() { super.onResume(); mMapView.onResume();
-		 * 
-		 * setUpMapIfNeeded(); }
-		 * 
-		 * private void setUpMapIfNeeded() { if (mMap == null) { if
-		 * (getActivity()==null)
-		 * Log.d("NullPinterestnterIn setUpMapIfNeeded","getActivity()==null");
-		 * if (getActivity().findViewById(R.id.map)==null)
-		 * Log.d("NullPinterestnterIn setUpMapIfNeeded"
-		 * ,"getActivity().findViewById(R.id.map)==null"); mMap = ((MapView)
-		 * getActivity().findViewById(R.id.map)).getMap(); mMap = ((MapView)
-		 * getActivity().findViewById(R.id.map)).getMap(); if (mMap != null) {
-		 * setUpMap(); } } }
-		 * 
-		 * private void setUpMap() { mMap.addMarker(new
-		 * MarkerOptions().position(new LatLng(0, 0)).title("Marker")); }
-		 * 
-		 * @Override public void onPause() { mMapView.onPause();
-		 * super.onPause(); }
-		 * 
-		 * @Override public void onDestroy() { mMapView.onDestroy();
-		 * super.onDestroy(); }
-		 * 
-		 * @Override public void onLowMemory() { super.onLowMemory();
-		 * mMapView.onLowMemory(); }
-		 * 
-		 * @Override public void onSaveInstanceState(Bundle outState) {
-		 * super.onSaveInstanceState(outState);
-		 * mMapView.onSaveInstanceState(outState); }
-		 */
 
 	}
 }

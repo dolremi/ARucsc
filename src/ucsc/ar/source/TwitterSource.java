@@ -36,17 +36,8 @@ public class TwitterSource implements DataSource {
 							anchor.getLongitude()), 0.1d, Query.KILOMETERS);
 					QueryResult result = twitter.search(query);
 					statuses = result.getTweets();
+
 					// gets Twitter instance with default credentials
-					/*
-					 * twitter = new TwitterFactory().getInstance(); User user =
-					 * twitter.verifyCredentials(); List<twitter4j.Status>
-					 * statuses = twitter.getHomeTimeline();
-					 * System.out.println("Showing @" + user.getScreenName() +
-					 * "'s home timeline."); for (twitter4j.Status status :
-					 * statuses) { System.out.println("@" +
-					 * status.getUser().getScreenName() + " - " +
-					 * status.getText()); }
-					 */
 				} catch (TwitterException te) {
 					te.printStackTrace();
 					System.out.println("Failed to get timeline: "

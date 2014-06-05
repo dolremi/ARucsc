@@ -21,23 +21,17 @@ import android.widget.TextView;
  * {@link TripDetailActivity} on handsets.
  */
 public class TripDetailFragment extends Fragment {
-	/**
-	 * The fragment argument representing the item ID that this fragment
-	 * represents.
-	 */
+
+	// The fragment argument representing the item ID that this fragment
+	// represents.
+
 	public static final String ARG_ITEM_ID = "item_id";
 
-	/**
-	 * The Trip this fragment is presenting.
-	 */
+	// Current trip
 	private Trip mItem;
 
 	private Activity currentActivity;
 
-	/**
-	 * Mandatory empty constructor for the fragment manager to instantiate the
-	 * fragment (e.g. upon screen orientation changes).
-	 */
 	public TripDetailFragment() {
 	}
 
@@ -62,11 +56,10 @@ public class TripDetailFragment extends Fragment {
 		View rootView = inflater.inflate(R.layout.fragment_trip_detail,
 				container, false);
 
-		/*
-		 * Show each Trip's details when it is selected. These are passed to the
-		 * child Views within rootView. These are declared in
-		 * fragment_Trip_detail.xml
-		 */
+		// Show each Trip's details when it is selected. These are passed to the
+		// child Views within rootView. These are declared in
+		// fragment_Trip_detail.xml
+
 		if (mItem != null) {
 
 			// text information
@@ -87,33 +80,12 @@ public class TripDetailFragment extends Fragment {
 						@Override
 						public void onClick(View v) {
 							CustomARSetup custom = new CustomARSetup();
-							// RelativePositionSetup custom = new
-							// RelativePositionSetup(); //For Pinterest markers
-							// which don't use GPS coordinates
-							// custom.context = currentActivity;
-							// edited to use getActivity(), avoiding NPEs when
-							// restarting Trip, when currentActivity is not
-							// initialised
+
 							custom.context = getActivity();
 							currentActivity = getActivity();
-							/*
-							 * custom.mapView = (MapView)
-							 * getSupportFragmentManager
-							 * ().findFragmentByTag("FragmentContainingMap"
-							 * ).getView().findViewById(R.id.map); ((ViewGroup)
-							 * custom
-							 * .mapView.getParent()).removeView(custom.mapView);
-							 */
+
 							custom.setTrip(mItem);
 							ArActivity.startWithSetup(currentActivity, custom);
-							/*
-							 * CustomARSetup custom = new CustomARSetup();
-							 * custom.context = currentActivity;
-							 * custom.setTrip(mItem);
-							 * ARActivityPlusMaps.startWithSetup
-							 * (currentActivity, custom); //changed to include
-							 * map
-							 */
 						}
 					});
 
@@ -126,12 +98,6 @@ public class TripDetailFragment extends Fragment {
 							// CustomARSetup custom = new CustomARSetup();
 							RelativePositionSetup custom = new RelativePositionSetup(); // For
 																						// Pinterest
-																						// markers
-																						// coordinates
-							// custom.context = currentActivity;
-							// edited to use getActivity(), avoiding NPEs when
-							// restarting Trip, when currentActivity is not
-							// initialised
 							custom.context = getActivity();
 							currentActivity = getActivity();
 							custom.setTrip(mItem);
