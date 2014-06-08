@@ -115,9 +115,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ucsc.ar.TripListActivity" />
         </activity>
-         <activity
+         <!--  <activity
             android:name="ucsc.ar.MapActivity"
             android:label="@string/title_activity_map" >
-        </activity>
+        </activity> -->
     </application>
 </manifest>

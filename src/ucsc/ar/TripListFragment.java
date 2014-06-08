@@ -28,60 +28,36 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-/**
- * A list fragment representing a list of Trips. This fragment also supports
- * tablet devices by allowing list items to be given an 'activated' state upon
- * selection. This helps indicate which item is currently being viewed in a
- * {@link TripDetailFragment}.
- * <p>
- * Activities containing this fragment MUST implement the {@link Callbacks}
- * interface.
- */
 public class TripListFragment extends ListFragment {
 
-	/**
-	 * The serialization (saved instance state) Bundle key representing the
-	 * activated item position. Only used on tablets.
-	 */
+	// The serialization (saved instance state) Bundle key representing the
+	// activated item position.
+
 	private static final String STATE_ACTIVATED_POSITION = "activated_position";
 
-	/**
-	 * The fragment's current callback object, which is notified of list item
-	 * clicks.
-	 */
+	// The fragment's current callback object, which is notified of list item
+	// clicks.
 	private Callbacks mCallbacks = sDummyCallbacks;
 
-	/**
-	 * The current activated item position. Only used on tablets.
-	 */
 	private int mActivatedPosition = ListView.INVALID_POSITION;
 
-	/** The current activity */
 	private Activity currentActivity;
 
-	/**
-	 * A callback interface that all activities containing this fragment must
-	 * implement. This mechanism allows activities to be notified of item
-	 * selections.
-	 */
+	// A callback interface that all activities containing this fragment must
+	// implement. This mechanism allows activities to be notified of item
+	// selections.
+
 	public interface Callbacks {
-		/**
-		 * Callback for when an item has been selected.
-		 */
+
 		public void onItemSelected(String id);
 	}
 
-	/**
-	 * A dummy implementation of the {@link Callbacks} interface that does
-	 * nothing. Used only when this fragment is not attached to an activity.
-	 */
 	private static Callbacks sDummyCallbacks = new Callbacks() {
 		@Override
 		public void onItemSelected(String id) {
 		}
 	};
 
-	/** Locally stored list and hash map of available Trips. */
 	private ArrayList<Trip> TripList;
 	private ArrayList<String> TripNameList;
 	public static HashMap<String, Trip> TripMap = new HashMap<String, Trip>();
@@ -90,23 +66,11 @@ public class TripListFragment extends ListFragment {
 
 	private OnNavigationListener mOnNavigationListener;
 
-	/**
-	 * Mandatory empty constructor for the fragment manager to instantiate the
-	 * fragment (e.g. upon screen orientation changes).
-	 */
 	public TripListFragment() {
 	}
 
-	/**
-	 * Method to populate the local list and hash map of Trips. To be called on
-	 * creation, and on refreshing.
-	 */
 	public void initialiseTrips() {
 		// create the list!
-		/*
-		 * This processing need not be done here, in which case the list and
-		 * hashmap of Trips should be externally accessible/modifiable.
-		 */
 
 		Field[] fields = R.raw.class.getFields();
 		Trip[] Trips = new Trip[fields.length];
@@ -132,13 +96,9 @@ public class TripListFragment extends ListFragment {
 		}
 
 		TripList = new ArrayList<Trip>();
-		// TripNameList = new ArrayList<String>();
 
-		// populate the list and hash map. NOTE: currently uses Trip name as
-		// key. Change later to id.
 		for (int i = 0; i < k; i++) {
 			TripList.add(Trips[i]);
-			// TripNameList.add(Trips[i].getName());
 			TripMap.put(Trips[i].getName(), Trips[i]);
 		}
 		sortTrips(); // must come BEFORE TripNameList is initialised
@@ -147,10 +107,6 @@ public class TripListFragment extends ListFragment {
 
 	}
 
-	/*
-	 * Initialise TripNameList based on the values in TripList in the same
-	 * order. Required when refreshing and changing the sort criterion.
-	 */
 	private void initialiseTripNameList() {
 		TripNameList = new ArrayList<String>();
 		for (int i = 0; i < TripList.size(); i++) {
@@ -160,7 +116,7 @@ public class TripListFragment extends ListFragment {
 
 	/* Method for sorting the list of Trips according to user preferences. */
 	public void sortTrips() {
-		// The string "sortOrder" is initialised with the user's choice for a
+		// The string "sortOrder" is initialized with the user's choice for a
 		// sorting criterion. */
 		String criteria[] = getResources().getStringArray(
 				R.array.sorting_criteria_list);
@@ -178,7 +134,7 @@ public class TripListFragment extends ListFragment {
 
 	// Different comparator classes for sorting the list of Trips according to
 	// user preferences .
-	/* Sort alphabetically */
+
 	private class AlphaComparator implements Comparator<Trip> {
 
 		@Override
@@ -188,7 +144,6 @@ public class TripListFragment extends ListFragment {
 
 	}
 
-	/* Sort by proximity */
 	private class ProxComparator implements Comparator<Trip> {
 
 		@Override
@@ -238,10 +193,6 @@ public class TripListFragment extends ListFragment {
 		resetAdapter();
 	}
 
-	/*
-	 * Create the spinner dropdown to choose the sorting criterion for listed
-	 * Trips.
-	 */
 	private void createSortingDropdown() {
 		// create spinner adapter
 		ArrayAdapter<CharSequence> mSpinnerAdapter = ArrayAdapter
@@ -262,12 +213,7 @@ public class TripListFragment extends ListFragment {
 			@Override
 			public boolean onNavigationItemSelected(int position, long itemId) {
 				// change sorting criterion and refresh as required
-				/*
-				 * switch (strings[position]) { case "Alphabetical": sortOrder =
-				 * strings[position]; refresh(); break; case "Proximity":
-				 * sortOrder = strings[position]; refresh(); break; default:
-				 * sortOrder = "Filename"; refresh(); break; }
-				 */
+
 				sortOrder = strings[position];
 				refresh();
 				Toast.makeText(getActivity(),
@@ -289,24 +235,18 @@ public class TripListFragment extends ListFragment {
 	private void resetAdapter() {
 		// Create and set list adapter, using list of Trip names. Style as
 		// required.
-		/*
-		 * ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-		 * getActivity(), R.layout.Trip_list_item_activated,
-		 * R.id.Trip_list_item_text, TripNameList);
-		 */
+
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
 				android.R.layout.simple_list_item_activated_1,
 				android.R.id.text1, TripNameList);
 		setListAdapter(adapter);
 	}
 
-	/* Refresh the list UI. */
 	private void refresh() {
 		initialiseTrips();
 		resetAdapter();
 	}
 
-	/* Display Help dialog screen */
 	private void help() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(
 				this.getActivity());
@@ -316,15 +256,13 @@ public class TripListFragment extends ListFragment {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				// TODO Auto-generated method stub - button can simply close
-				// dialog
+
 			}
 		});
 		AlertDialog dialog = builder.create();
 		dialog.show();
 	}
 
-	/* Display About dialog screen */
 	private void about() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(
 				this.getActivity());
@@ -334,21 +272,18 @@ public class TripListFragment extends ListFragment {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				// TODO Auto-generated method stub - button can simply close
-				// dialog
+
 			}
 		});
 		AlertDialog dialog = builder.create();
 		dialog.show();
 	}
 
-	/* Inflate action bar menu items. */
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		// Inflate the menu items for use in the action bar
 		inflater.inflate(R.menu.trip_list_activity_actions, menu);
 	}
 
-	/* Define behaviour for action bar menu items. */
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
 
@@ -356,29 +291,21 @@ public class TripListFragment extends ListFragment {
 
 		case R.id.action_refresh:
 			refresh();
-			// display message
+
 			Toast.makeText(getActivity(), "Refreshed", Toast.LENGTH_SHORT)
 					.show();
 			break;
 		case R.id.action_help:
 			help();
-			// display message
+
 			Toast.makeText(getActivity(), "Help", Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.action_about:
 			about();
-			// display message
-			// Toast.makeText(getActivity(), "About",
-			// Toast.LENGTH_SHORT).show();
+
 			break;
 		}
-		/*
-		 * } R.id.action_refresh) { refresh(); // display message
-		 * Toast.makeText(getActivity(), "Refreshed",
-		 * Toast.LENGTH_SHORT).show(); } if(id == R.id.action_help) { help(); //
-		 * display message Toast.makeText(getActivity(), "Help",
-		 * Toast.LENGTH_SHORT).show(); }
-		 */
+
 		return getActivity().onOptionsItemSelected(item);
 	}
 
@@ -433,10 +360,6 @@ public class TripListFragment extends ListFragment {
 		}
 	}
 
-	/**
-	 * Turns on activate-on-click mode. When this mode is on, list items will be
-	 * given the 'activated' state when touched.
-	 */
 	public void setActivateOnItemClick(boolean activateOnItemClick) {
 		// When setting CHOICE_MODE_SINGLE, ListView will automatically
 		// give items the 'activated' state when touched.

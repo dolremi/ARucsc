@@ -56,7 +56,7 @@ public class TwitterSource implements DataSource {
 	}
 
 	public TwitterSource(String hashtags) {
-		// Changed from this(null, "");
+
 		this(null, hashtags);
 	}
 
@@ -72,7 +72,7 @@ public class TwitterSource implements DataSource {
 
 	@Override
 	public Bitmap getCurrentImage() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 

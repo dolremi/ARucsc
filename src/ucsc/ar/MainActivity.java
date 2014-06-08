@@ -27,15 +27,6 @@ public class MainActivity extends ActionBarActivity {
 
 	}
 
-	// method called by Start AR button, loading ArActivity with custom Setup
-	// and one of the Trips
-	// public void startAR(View view) {
-	// CustomARSetup custom = new CustomARSetup();
-	// custom.context = mainActivity;
-	// custom.setTrip(R.raw.trip_stem_colleges);
-	// ArActivity.startWithSetup(MainActivity.this, custom);
-	// }
-
 	// method called by Trip Selection button, loading Trip selection screen.
 	public void TripSelection(View view) {
 		Intent intent = new Intent(this, TripListActivity.class);
@@ -62,9 +53,8 @@ public class MainActivity extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	/**
-	 * A placeholder fragment containing a simple view.
-	 * */
+	// A placeholder fragment containing a simple view.
+
 	public static class PlaceholderFragment extends Fragment {
 
 		public PlaceholderFragment() {

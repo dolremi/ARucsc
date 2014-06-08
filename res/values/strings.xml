@@ -41,20 +41,13 @@
         The name and distance of the next location are on the bottom of the screen. Use the Previous or Next buttons to skip points.\n
         When you reach the next point of interest, the app will display information about it in a box, including recent tweets.\n
         A green marker may be visible on your screen when you reach the point.\n
-        Tap the marker once to view tweets, and twice to load the next POI.
-	    To return to the trip selection screen, press your device\'s Back button.\n 
-	    MAP:\n
-        Click Show Map to display a map of the trip (needs internet). You can then display and animate the route to the next point.\n
-        Blue markers are visited points, green is the next point on the trip, purple are later points on the trip.\n
-        R will display the route to the next POI (if possible), and A will animate this.\n
-        To return to the camera view from the map, press your device\'s Back button.
+        Red markers are visited points, green is the next point on the trip.\n
 	    </string>
 	<string name="help_title">Help</string>
 	<string name="about_text">
 	    This app was developed by Ni Di and Jia Xu\n
 	    Augmented reality behaviour implemented using the\n
 	    DroidAR framework (www.github.com/bitstars/droidar).\n
-	    Maps behaviour implemented using Google Maps API.\n
 	    Twitter feed implemented using Twitter4j.\n
 	    Other sources listed in the project report.
 	</string>

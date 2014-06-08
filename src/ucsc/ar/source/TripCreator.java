@@ -23,7 +23,6 @@ public class TripCreator {
 			pullParserFactory = XmlPullParserFactory.newInstance();
 			XmlPullParser parser = pullParserFactory.newPullParser();
 
-			// InputStream in_s = new FileInputStream(fileName);
 			parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
 			parser.setInput(in_s, null);
 			System.out.println("Starting to parse");
@@ -77,6 +76,7 @@ public class TripCreator {
 				break;
 			case XmlPullParser.START_TAG:
 				name = parser.getName();
+
 				// switch between types of tags
 				switch (name) {
 				case "meta":
@@ -143,7 +143,8 @@ public class TripCreator {
 				name = parser.getName();
 				switch (name) {
 				case "pinterest":
-					// Will add the Pinterest only if the data is full
+
+					// Will add the Pinterest if the data is full
 					Pinterest newPinterest = currentPinterestData
 							.createPinterest();
 					if (newPinterest != null)
@@ -157,7 +158,7 @@ public class TripCreator {
 				}
 			}
 			eventType = parser.next();
-		} // end of while
+		}
 
 		return TripData;
 	}
@@ -244,16 +245,6 @@ public class TripCreator {
 		}
 	}
 
-	/**
-	 * Returns a preview of the Trip in the form of a Trip object with the right
-	 * size, info, name, id and a list of Pinterests containing only the
-	 * starting Pinterestnt of the Trip Requires an xml file. For the format
-	 * take a look at the Trip(InputStream in_s). Will return null if there was
-	 * a problem with the parsing.
-	 * 
-	 * @param in_s
-	 * @return
-	 */
 	public static Trip getTripPreview(InputStream in_s) {
 		TripData TripData = null;
 		XmlPullParserFactory pullParserFactory;
@@ -261,7 +252,6 @@ public class TripCreator {
 			pullParserFactory = XmlPullParserFactory.newInstance();
 			XmlPullParser parser = pullParserFactory.newPullParser();
 
-			// InputStream in_s = new FileInputStream(fileName);
 			parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
 			parser.setInput(in_s, null);
 
@@ -272,20 +262,15 @@ public class TripCreator {
 			System.out
 					.println("Invalid Trip file - XmlPullParserException in line "
 							+ e.getLineNumber());
-			// TripData = new TripData(null, -1, "Invalid Trip",
-			// "XmlPullParserEception in line "+e.getLineNumber());
+
 			e.printStackTrace();
 		} catch (FileNotFoundException e) {
 			TripData = null;
 			System.out.println("Invalid Trip file - FileNotFoundException");
-			// TripData = new TripData(null, -1, "Invalid Trip",
-			// "FileNotFoundException");
 			e.printStackTrace();
 		} catch (IOException e) {
 			TripData = null;
 			System.out.println("Invalid Trip file - IOException");
-			// TripData = new TripData(null, -1, "Invalid Trip",
-			// "FileNotFoundException");
 			e.printStackTrace();
 		}
 		if (TripData != null) {
@@ -303,9 +288,6 @@ public class TripCreator {
 		int eventType = parser.getEventType();
 		boolean readFirstPinterest = false; // will be set to true after the
 											// first successfully read Pinterest
-											// - when reaching a </Pinterest>
-											// where all the data for the
-											// Pinterest has been filled.
 		boolean inMeta = false;
 		PinterestData currentPinterestData = new PinterestData();
 
@@ -317,7 +299,7 @@ public class TripCreator {
 				break;
 			case XmlPullParser.START_TAG:
 				name = parser.getName();
-				// switch between types of tags
+
 				switch (name) {
 				case "meta":
 					inMeta = true;
@@ -383,7 +365,7 @@ public class TripCreator {
 				name = parser.getName();
 				switch (name) {
 				case "pinterest":
-					// Will add the Pinterest only if the data is full
+
 					if (currentPinterestData != null) {
 						Pinterest newPinterest = currentPinterestData
 								.createPinterest();
@@ -402,7 +384,7 @@ public class TripCreator {
 				}
 			}
 			eventType = parser.next();
-		} // end of while
+		}
 
 		return TripData;
 	}

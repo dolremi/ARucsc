@@ -51,9 +51,8 @@ public class InfoScreen extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	/**
-	 * A placeholder fragment containing a simple view.
-	 */
+	// A placeholder fragment containing a simple view.
+
 	public static class PlaceholderFragment extends Fragment {
 
 		public PlaceholderFragment() {

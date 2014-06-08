@@ -16,15 +16,6 @@ public class Trip {
 	private String info;
 	private int size; // Useful when parsing only the metadata
 
-	/**
-	 * When there are sizes difference, use the copy constructor
-	 * 
-	 * @param Pinterests
-	 * @param id
-	 * @param name
-	 * @param info
-	 * @param size
-	 */
 	public Trip(List<Pinterest> Pinterests, String id, String name,
 			String info, int size) {
 		this.Pinterests = Pinterests;
@@ -34,33 +25,15 @@ public class Trip {
 		this.size = size;
 	}
 
-	/**
-	 * Another copy constructor to transfer Array to ArrayList
-	 * 
-	 * @param Pinterests
-	 * @param id
-	 * @param name
-	 * @param info
-	 */
 	// Another copy constructor to transfer Array to ArrayList
 	public Trip(Pinterest[] Pinterests, String id, String name, String info) {
 		this(Arrays.asList(Pinterests), id, name, info);
 	}
 
-	/** A no-argument constructor for use with different methods */
+	// A no-argument constructor for use with different methods */
 	public Trip() {
 	}
 
-	/**
-	 * Creates a Trip with the following parameters. If the ArrayList is null or
-	 * empty creates it so that it has a single Pinterest("Empty Trip", 0.0,
-	 * 0.0, "Empty Trip")
-	 * 
-	 * @param Pinterests
-	 * @param id
-	 * @param name
-	 * @param info
-	 */
 	// Constructor for ArrayList
 	public Trip(List<Pinterest> Pinterests, String id, String name, String info) {
 		this.id = id;
@@ -76,12 +49,6 @@ public class Trip {
 		System.out.println("Trip " + id + " of size " + this.Pinterests.size()
 				+ " created");
 	}
-
-	/**
-	 * Creates a Trip using an InputStream from an xml file. Format of the xml:
-	 * 
-	 * @param fileName
-	 */
 
 	public String getName() {
 		return name;
@@ -131,13 +98,6 @@ public class Trip {
 		index--;
 	}
 
-	/**
-	 * Returns the Pinterest at that index. If the index is invalid will return
-	 * the first Pinterest of the Trip.
-	 * 
-	 * @param ind
-	 * @return Pinterest at that index
-	 */
 	// Returns the first Pinterest if supplied an invalid index
 	public Pinterest getPinterest(int ind) {
 		try {
@@ -147,20 +107,10 @@ public class Trip {
 		}
 	}
 
-	/**
-	 * Returns the Pinterest at the current index
-	 * 
-	 * @return
-	 */
 	public Pinterest getCurrentPinterest() {
 		return Pinterests.get(index);
 	}
 
-	/**
-	 * Moves to the next Pinterest, incrementing the index (mod sizeOfTheTrip)
-	 * 
-	 * @return the next Pinterest (mod the size of the Trip)
-	 */
 	// Increments index (mod Pinterests.length) and returns the Pinterest with
 	// that index
 	public Pinterest moveToNextPinterest() {
@@ -170,12 +120,6 @@ public class Trip {
 		return Pinterests.get(index);
 	}
 
-	/**
-	 * Returns the Pinterest in the next position(mod size). Doesn't increment
-	 * the index. Will print out "No next Pinterest" if it has wrapped around.
-	 * 
-	 * @return the Pinterest in the next position
-	 */
 	public Pinterest getNextPinterest() {
 		int nextIndex = (index + 1) % Pinterests.size();
 		if (nextIndex == 0)
@@ -183,22 +127,12 @@ public class Trip {
 		return Pinterests.get(nextIndex);
 	}
 
-	/**
-	 * Returns the Pinterests converted into an Array
-	 * 
-	 * @return Pinterests as a Pinterest[]
-	 */
 	public Pinterest[] getAllPinterestsAsArray() {
 		Pinterest[] p = new Pinterest[size];
 		Pinterests.toArray(p);
 		return p;
 	}
 
-	/**
-	 * Returns the Pinterests in a list
-	 * 
-	 * @return Pinterests
-	 */
 	public List<Pinterest> getAllPinterests() {
 		return Pinterests;
 	}

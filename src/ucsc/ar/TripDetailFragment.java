@@ -15,11 +15,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-/**
- * A fragment representing a single Trip detail screen. This fragment is either
- * contained in a {@link TripListActivity} in two-pane mode (on tablets) or a
- * {@link TripDetailActivity} on handsets.
- */
 public class TripDetailFragment extends Fragment {
 
 	// The fragment argument representing the item ID that this fragment
@@ -109,10 +104,8 @@ public class TripDetailFragment extends Fragment {
 		return rootView;
 	}
 
-	/*
-	 * Converts list of Pinterests into String containing numbered Pinterest
-	 * names.
-	 */
+	// Converts list of Pinterests into String containing numbered Pinterest
+	// names.
 	private String listToText(List<Pinterest> Pinterests) {
 		String result = "";
 		int count = 1; // normal counting starts at 1!
