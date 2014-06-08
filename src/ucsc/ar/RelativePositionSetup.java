@@ -19,7 +19,6 @@ import system.Setup;
 import ucsc.ar.source.TripCreator;
 import ucsc.ar.structure.Pinterest;
 import ucsc.ar.structure.Trip;
-import util.Log;
 import util.Vec;
 import worldData.SystemUpdater;
 import worldData.World;
@@ -31,7 +30,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -344,38 +342,28 @@ public class RelativePositionSetup extends Setup {
 		}, "Previous");
 
 		// Show Map Button
-		guiSetup.addButtonToBottomView(new Command() {
-
-			@Override
-			public boolean execute() {
-				if (isOnline()) {
-					Intent intent = new Intent(getActivity(), MapActivity.class);
-					Pinterest[] p = theActiveTrip.getAllPinterestsAsArray();
-					int n = p.length;
-					double[] lats = new double[n];
-					double[] longs = new double[n];
-					String[] names = new String[n];
-					for (int i = 0; i < n; i++) {
-						lats[i] = p[i].getLatitude();
-						longs[i] = p[i].getLongitude();
-						names[i] = p[i].getName();
-					}
-					intent.putExtra("LATS", lats);
-					intent.putExtra("LONGS", longs);
-					intent.putExtra("NAMES", names);
-					intent.putExtra("CURRENT",
-							Math.max(0, theActiveTrip.getIndex() - 1));
-
-					getActivity().startActivity(intent);
-					return true;
-				}
-				Log.d("RelativePositionSetup.Show map",
-						"No internet connection, not displaying map.");
-				CommandShowToast.show(getActivity(), "No internet connection");
-				return false;
-			}
-
-		}, "Show map");
+		/*
+		 * guiSetup.addButtonToBottomView(new Command() {
+		 * 
+		 * @Override public boolean execute() { if (isOnline()) { Intent intent
+		 * = new Intent(getActivity(), MapActivity.class); Pinterest[] p =
+		 * theActiveTrip.getAllPinterestsAsArray(); int n = p.length; double[]
+		 * lats = new double[n]; double[] longs = new double[n]; String[] names
+		 * = new String[n]; for (int i = 0; i < n; i++) { lats[i] =
+		 * p[i].getLatitude(); longs[i] = p[i].getLongitude(); names[i] =
+		 * p[i].getName(); } intent.putExtra("LATS", lats);
+		 * intent.putExtra("LONGS", longs); intent.putExtra("NAMES", names);
+		 * intent.putExtra("CURRENT", Math.max(0, theActiveTrip.getIndex() -
+		 * 1));
+		 * 
+		 * getActivity().startActivity(intent); return true; }
+		 * Log.d("RelativePositionSetup.Show map",
+		 * "No internet connection, not displaying map.");
+		 * CommandShowToast.show(getActivity(), "No internet connection");
+		 * return false; }
+		 * 
+		 * }, "Show map");
+		 */
 
 		// Text stating the next location and the distance to it
 		guiSetup.addViewToBottom(distanceInfo);

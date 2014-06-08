@@ -68,29 +68,7 @@ public class TripListActivity extends FragmentActivity implements
 			NavUtils.navigateUpFromSameTask(this);
 			return true;
 		}
-		/*
-		 * Can insert code here to handle the refresh button, but avoid if this
-		 * processing is done in TripListFragment's method, as this method
-		 * overrides that of the fragments called
-		 * 
-		 * if (id == R.id.action_refresh) { // refresh Toast.makeText(this,
-		 * "Refresh selected from activity", Toast.LENGTH_SHORT) .show();
-		 * 
-		 * //copied code to load fragment
-		 * 
-		 * if (findViewById(R.id.Trip_detail_container) != null) { // The detail
-		 * container view will be present only in the // large-screen layouts
-		 * (res/values-large and // res/values-sw600dp). If this view is
-		 * present, then the // activity should be in two-pane mode. mTwoPane =
-		 * true;
-		 * 
-		 * // In two-pane mode, list items should be given the // 'activated'
-		 * state when touched. ((TripListFragment)
-		 * getSupportFragmentManager().findFragmentById(
-		 * R.id.Trip_list)).setActivateOnItemClick(true); }
-		 * 
-		 * return true; }
-		 */
+
 		return super.onOptionsItemSelected(item);
 	}
 
