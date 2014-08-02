@@ -17,8 +17,6 @@ public class TwitterSource implements DataSource {
 	private Pinterest anchor;
 	private String hashtags;
 	private Twitter twitter;
-	private final String TWITTER_CONSUMER_KEY = "c4BX3I6zynG93AH9nvgTXL5Rc";
-	private final String TWITTER_CONSUMER_SECRET = "INDmINBOm8rNpD2kdkNGrJtyRTUeOFqcUZxAncvFs4IYS4IlcN";
 	private List<twitter4j.Status> statuses;
 	private int statusIndex = 0;
 
